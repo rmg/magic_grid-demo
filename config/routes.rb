@@ -1,6 +1,6 @@
 MagicGridDemo::Application.routes.draw do
-  resources :authors
-  resources :posts
+  resources :authors, except: [:create, :update, :delete]
+  resources :posts, except: [:create, :update, :delete]
   root to: 'posts#index'
 
   # The priority is based upon order of creation:

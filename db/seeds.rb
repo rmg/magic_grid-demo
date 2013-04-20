@@ -5,3 +5,23 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+authors = Author.create([
+  {name: 'Bruce Wayne', email: 'bruce@example.com'},
+  {name: 'Tony Stark', email: 'tony@example.com'}
+])
+
+authors.each do |author|
+  Post.create([
+    {
+      title: "I am not a super hero",
+      body: "It has come to my attention that some people think I am, but I am not.",
+      author: author
+    },
+    {
+      title: "Too much money?",
+      body: "Sometimes I think I might have too much money.. but then I buy a new toy and I feel better.",
+      author: author
+    }
+  ])
+end
