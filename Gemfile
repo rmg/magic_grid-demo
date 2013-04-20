@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-
+gem 'magic_grid'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -30,6 +30,7 @@ gem 'jquery-rails'
 
 # Use unicorn as the app server
 # gem 'unicorn'
+gem 'puma'
 
 # Deploy with Capistrano
 # gem 'capistrano'
