@@ -1,29 +1,43 @@
-<h1>Listing posts</h1>
+<h1>magic_grid examples</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Body</th>
-    <th>Published</th>
-    <th>Author</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h2>Requirements</h2>
+<p>
+The following examples have a couple dependencies outside of their actual call to magic_grid.
+</p>
+<h3>Gemfiles</h3>
+<p>
+I'm using <code>Kaminari</code> for these examples. If you use <code>WillPaginate</code> then
+the pagination links in the table footers will look a little different. The functionality should
+be the same!
+</p>
+<h3>Controller</h3>
+<code>@posts</code> is an <code>ActiveRelation</code>. This is required for a bunch of the extras
+such as sorting, filtering, searching, and non-slow pagination.
+<pre>
+def index
+  @posts = Post.unscoped
+end
+</pre>
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.body %></td>
-    <td><%= post.published %></td>
-    <td><%= post.author %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+<h2>Basic Usage</h2>
 
-<br />
+<pre>&lt;%= magic_grid(@posts, [:title, :author, :date_published], per_page: 7) %&gt;</pre>
+<p>Notice how <code>#to_s</code> is called on each column. Too bad <code>Author</code> does not
+have a <code>#to_s</code> method!</p>
+<%= magic_grid(@posts, [:title, :author, :date_published], per_page: 7) %>
 
-<%= link_to 'New Post', new_post_path %>
+<h2>Custom Column Printing</h2>
+<pre>
+&lt;%= magic_grid(@posts,
+                  [ :title,
+                    {col: :author, to_s: ->(p){p.author.name}},
+                    :date_published
+                  ], per_page: 7) %&gt;
+</pre>
+<p>Here we go, now we can get the column to show up properly. Hey, shouldn't it be sortable?</p>
+<%= magic_grid(@posts,
+                  [ :title,
+                    {col: :author, to_s: ->(p){p.author.name}},
+                    :date_published
+                  ], per_page: 7) %>
+
