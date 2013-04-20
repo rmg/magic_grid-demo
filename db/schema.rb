@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420201607) do
+ActiveRecord::Schema.define(:version => 20130420211540) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -25,8 +25,9 @@ ActiveRecord::Schema.define(:version => 20130420201607) do
     t.text     "body"
     t.boolean  "published"
     t.integer  "author_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+    t.datetime "date_published"
   end
 
   add_index "posts", ["author_id"], :name => "index_posts_on_author_id"
