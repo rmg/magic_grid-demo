@@ -1,6 +1,6 @@
 == Demo Site for magic_grid
 
-Demo: http://magic-grid.herokuapp.com/
+Demo: http://magic-grid.herokuapp.com
 
 Source: https://github.com/rmg/magic_grid
 
