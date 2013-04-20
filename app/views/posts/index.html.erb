@@ -4,12 +4,39 @@
 <p>
 The following examples have a couple dependencies outside of their actual call to magic_grid.
 </p>
-<h3>Gemfiles</h3>
+<h3>Gemfile</h3>
 <p>
 I'm using <code>Kaminari</code> for these examples. If you use <code>WillPaginate</code> then
 the pagination links in the table footers will look a little different. The functionality should
 be the same!
 </p>
+<pre>
+gem 'magic_grid'
+gem 'kaminari'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+</pre>
+
+<h3>Assets</h3>
+<h4>CSS</h4>
+<pre>
+/*
+ *= require jquery.ui.all
+ *= require_self
+ *= require_tree .
+ */
+.magic_grid thead th .ui-icon { display: inline-block; }
+</pre>
+
+<h4>JavaScript</h4>
+<pre>
+//= require jquery
+//= require jquery_ujs
+//= require jquery.ui.all
+//= require magic_grid
+//= require_tree .
+</pre>
+
 <h3>Controller</h3>
 <code>@posts</code> is an <code>ActiveRelation</code>. This is required for a bunch of the extras
 such as sorting, filtering, searching, and non-slow pagination.

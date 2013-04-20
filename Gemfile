@@ -2,9 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 gem 'pg'
-gem 'magic_grid'
+
 gem 'puma'
+
+gem 'magic_grid'
+gem 'kaminari'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :development do
   gem 'foreman', require: false
