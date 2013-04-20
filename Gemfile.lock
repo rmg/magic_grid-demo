@@ -115,6 +115,7 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 3.2.1)
   foreman
+  jquery-rails
   magic_grid
   pg
   puma

@@ -4,6 +4,7 @@ gem 'rails', '3.2.13'
 gem 'pg'
 gem 'magic_grid'
 gem 'puma'
+gem 'jquery-rails'
 
 group :development do
   gem 'foreman', require: false
