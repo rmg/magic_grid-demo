@@ -4,11 +4,14 @@ gem 'rails', '3.2.13'
 gem 'pg'
 
 gem 'puma'
+gem 'bootstrap-sass'
 
+## <<< Magic Grid Demos
 gem 'magic_grid'
 gem 'kaminari'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+## >>> Magic Grid Demos
 
 group :development do
   gem 'foreman', require: false
@@ -26,5 +29,3 @@ group :assets do
   #gem 'uglifier', '>= 1.0.3'
 end
 
-
-gem 'bootstrap-sass'
