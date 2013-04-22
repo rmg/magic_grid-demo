@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-gem 'pg'
+#gem 'pg'
 
 gem 'puma'
 
@@ -9,6 +9,7 @@ gem 'magic_grid'
 gem 'kaminari'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+
 
 group :development do
   gem 'foreman', require: false
@@ -25,3 +26,6 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+# bootstrap
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
