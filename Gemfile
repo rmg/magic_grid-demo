@@ -10,6 +10,7 @@ gem 'kaminari'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+
 group :development do
   gem 'foreman', require: false
 end
@@ -25,3 +26,8 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
+# bootstrap
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem "less-rails"
+gem 'therubyracer', '0.10.2'

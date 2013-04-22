@@ -13,4 +13,5 @@
  *= require_tree .
  */
 
+#main-container { margin-top: 40px; }
 .magic_grid thead th .ui-icon { display: inline-block; }
