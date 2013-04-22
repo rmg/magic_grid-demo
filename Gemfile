@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
-#gem 'pg'
+gem 'pg'
 
 gem 'puma'
 
@@ -29,3 +29,5 @@ end
 
 # bootstrap
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem "less-rails"
+gem 'therubyracer', '0.10.2'
