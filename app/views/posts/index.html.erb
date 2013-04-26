@@ -53,8 +53,12 @@ end
 have a <code>#to_s</code> method!</p>
 <%= magic_grid(@posts, [:title, :author, :date_published], per_page: 7, class: 'table') %>
 
-<span class="label label-info">Info</span> Using <code>.table</code> class for basic styling—light padding and only horizontal
-dividers. See <a href='http://twitter.github.io/bootstrap/base-css.html#tables'>Bootstrap Tables</a> for more details.
+<p>
+<span class="label label-info">Info</span> We're using the <code>:class</code>
+option here to add the <code>.table</code> class to spruce up the grid a bit.
+See <a href='http://twitter.github.io/bootstrap/base-css.html#tables'>Bootstrap Tables</a>
+for more details.
+</p>
 
 <h2 class='page-header'>Custom Column Printing</h2>
 <pre>
