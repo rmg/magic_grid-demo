@@ -5,6 +5,7 @@ gem 'pg'
 
 gem 'puma'
 gem 'bootstrap-sass'
+gem 'coderay'
 
 ## <<< Magic Grid Demos
 gem 'magic_grid'

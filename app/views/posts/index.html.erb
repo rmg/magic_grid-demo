@@ -10,45 +10,48 @@ I'm using <code>Kaminari</code> for these examples. If you use <code>WillPaginat
 the pagination links in the table footers will look a little different. The functionality should
 be the same!
 </p>
-<pre>
+<%= code :ruby do %>
 gem 'magic_grid'
 gem 'kaminari'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-</pre>
+<% end %>
 
 <h3 class='page-header'>Assets</h3>
 <h4>CSS</h4>
-<pre>
+<%= code :css do %>
 /*
  *= require jquery.ui.all
  *= require_self
  *= require_tree .
  */
 .magic_grid thead th .ui-icon { display: inline-block; }
-</pre>
+<% end %>
 
 <h4>JavaScript</h4>
-<pre>
+<%= code :javascript do %>
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
 //= require magic_grid
 //= require_tree .
-</pre>
+<% end %>
 
 <h3 class='page-header'>Controller</h3>
 <p><code>@posts</code> is an <code>ActiveRelation</code>. This is required for a bunch of the extras
 such as sorting, filtering, searching, and non-slow pagination.</p>
-<pre>
+<%= code :ruby do %>
 def index
   @posts = Post.unscoped
 end
-</pre>
+<% end %>
 
 <h2 class='page-header'>Basic Usage</h2>
 
-<pre>&lt;%= magic_grid(@posts, [:title, :author, :date_published], per_page: 7, class: 'table') %&gt;</pre>
+<%= code :erb do %>
+= magic_grid(@posts, [:title, :author, :date_published], per_page: 7, class: "table")
+<% end %>
+
 <p>Notice how <code>#to_s</code> is called on each column. Too bad <code>Author</code> does not
 have a <code>#to_s</code> method!</p>
 <%= magic_grid(@posts, [:title, :author, :date_published], per_page: 7, class: 'table') %>
@@ -61,13 +64,13 @@ for more details.
 </p>
 
 <h2 class='page-header'>Custom Column Printing</h2>
-<pre>
-&lt;%= magic_grid(@posts,
-                  [ :title,
-                    {col: :author, to_s: ->(p){p.author.name}},
-                    :date_published
-                  ], per_page: 7, class: 'table') %&gt;
-</pre>
+<%= code :erb do %>
+= magic_grid(@posts,
+              [ :title,
+                {col: :author, to_s: ->(p){p.author.name}},
+                :date_published
+              ], per_page: 7, class: 'table')
+<% end %>
 <p>Here we go, now we can get the column to show up properly. Hey, shouldn't it be sortable?</p>
 <%= magic_grid(@posts,
                   [ :title,
